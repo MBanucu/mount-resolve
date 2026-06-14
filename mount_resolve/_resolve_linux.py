@@ -1,6 +1,7 @@
 """Linux-specific device/mount resolution."""
 
 import os
+import re
 import subprocess
 
 
@@ -27,4 +28,20 @@ def resolve_mount_point(path: str) -> str | None:
         capture_output=True, text=True, timeout=5)
     if r.returncode == 0 and r.stdout.strip():
         return r.stdout.strip()
+    return None
+
+
+_LO_REGEX = re.compile(r'\(([^)]+)\)')
+
+
+def device_backing_file(device: str) -> str | None:
+    """Return the backing file path for a loop device, or None."""
+    r = subprocess.run(
+        ['losetup', device],
+        capture_output=True, text=True, timeout=5)
+    if r.returncode != 0:
+        return None
+    m = _LO_REGEX.search(r.stdout)
+    if m:
+        return m.group(1)
     return None

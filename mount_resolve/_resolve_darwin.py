@@ -19,6 +19,7 @@ def resolve_device(path: str) -> str | None:
 
 
 def _resolve_backing_file_darwin(dev_entry: str) -> str | None:
+    """Return the backing file for *dev_entry*, or None."""
     try:
         r = subprocess.run(
             ['hdiutil', 'info', '-plist'],
@@ -35,6 +36,9 @@ def _resolve_backing_file_darwin(dev_entry: str) -> str | None:
     except Exception:
         pass
     return None
+
+
+device_backing_file = _resolve_backing_file_darwin
 
 
 def resolve_mount_point(path: str) -> str | None:
