@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-06-14
+
+### Added
+
+- `device_backing_file(device)` — return the backing file path for a loop device
+  (Linux `losetup`) or an attached disk image (macOS `hdiutil info -plist`).
+
+### Changed
+
+- Use SPDX license string format in `pyproject.toml` (fixes setuptools deprecation warnings).
+- Remove deprecated license classifier.
+
 ## [0.1.0] - 2026-06-14
 
 ### Added
@@ -19,5 +31,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - macOS support via `df`, `stat`, and `hdiutil info -plist`.
 - Nix flake with dev shell and package overlay.
 
-[unreleased]: https://github.com/MBanucu/mount-resolve/compare/v0.1.0...HEAD
+[unreleased]: https://github.com/MBanucu/mount-resolve/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/MBanucu/mount-resolve/releases/tag/v0.2.0
 [0.1.0]: https://github.com/MBanucu/mount-resolve/releases/tag/v0.1.0
