@@ -8,6 +8,10 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/MBanucu/mount-resolve/test.yml?branch=main)](https://github.com/MBanucu/mount-resolve/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/MBanucu/mount-resolve/branch/main/graph/badge.svg)](https://codecov.io/gh/MBanucu/mount-resolve)
 
+[![Downloads total](https://pepy.tech/badge/mount-resolve)](https://pepy.tech/project/mount-resolve)
+[![Downloads/month](https://pepy.tech/badge/mount-resolve/month)](https://pepy.tech/project/mount-resolve)
+[![Downloads/week](https://pepy.tech/badge/mount-resolve/week)](https://pepy.tech/project/mount-resolve)
+
 Cross-platform block device and mount point resolution from file paths.
 
 ## Features
